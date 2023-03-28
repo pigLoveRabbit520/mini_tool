@@ -1,23 +1,19 @@
 #include "window.h"
 
 ToolFrame::ToolFrame(const wxString& title)
-       : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(500, 300))
+       : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(1000, 400))
 {
     wxBoxSizer *topSizer = new wxBoxSizer(wxVERTICAL);
 
-    wxString msg("Lots and lots of text to wrap hopefully. "
-        "Lots and lots of text to wrap hopefully. "
-        "Lots and lots of text to wrap hopefully. "
-        "Lots and lots of text to wrap hopefully. "
-        "Lots and lots of text to wrap hopefully. "
-        "Lots and lots of text to wrap hopefully. "
-    );
-
     auto myBtn = new wxButton(this, wxID_EXIT, wxT("获取"));
-    auto myTxt = new wxTextCtrl(this, wxID_ANY, msg, wxDefaultPosition, wxSize(200, 200), wxTE_MULTILINE);
+    auto myTxt = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(500, 500), wxTE_MULTILINE);
+    wxFont font = myTxt->GetFont();
+    font.SetPointSize(12);
+    myTxt->SetFont(font);
     // myTxt->SetForegroundColour("white");
     // myTxt->SetBackgroundColour("black");
 
+    topSizer->AddSpacer(20);
     topSizer->Add(myBtn, wxSizerFlags().Center());
     topSizer->AddSpacer(40);
     topSizer->Add(myTxt, wxSizerFlags().Center().Border(wxALL, 20));
