@@ -4,8 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${env:WXWIN}/include/**",
-                "${env:WXWIN}/lib/gcc_lib/mswu/**"
+                "${env:WXWIN}/include",
+                "${env:WXWIN}/lib/gcc_lib/mswu"
             ],
             "defines": [
                 "_DEBUG",
@@ -13,7 +13,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "g++.exe",
+            "compilerPath": "D:\\software\\x86_64-7.3.0-release-win32-seh-rt_v5-rev0\\mingw64\\bin\\g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64"
