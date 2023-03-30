@@ -3,6 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/textctrl.h>
+#include "mainboard.h"
 
 class ToolFrame : public wxFrame
 {
@@ -12,7 +13,7 @@ public:
     void OnBtnClick(wxCommandEvent & event);
 
 private:
-    wxStaticText* m_text;
+    wxTextCtrl* txtInfo;
 };
 
 

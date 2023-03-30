@@ -10,6 +10,7 @@ ToolFrame::ToolFrame(const wxString& title)
     wxFont font = myTxt->GetFont();
     font.SetPointSize(12);
     myTxt->SetFont(font);
+    this->txtInfo = myTxt;
     // myTxt->SetForegroundColour("white");
     // myTxt->SetBackgroundColour("black");
 
@@ -29,5 +30,19 @@ ToolFrame::ToolFrame(const wxString& title)
 
 void ToolFrame::OnBtnClick(wxCommandEvent & WXUNUSED(event))
 {
-    Close(true);
+    MainBoard* mainBoard = new MainBoard();
+    auto res = mainBoard->GetInfo();
+    if (res < 0)
+    {
+        this->txtInfo->AppendText("无法打开注册表项");
+        delete mainBoard;
+        return;
+    }
+    auto info = wxString::Format(wxT("主板制造商：%s\r\n主板型号：%s") , 
+        mainBoard->BaseBoardManufacturer, 
+        mainBoard->BaseBoardProduct
+    );
+    this->txtInfo->AppendText(info);
+
+    delete mainBoard;
 }
