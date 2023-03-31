@@ -2,7 +2,7 @@
 一个查看windows主板，CPU等信息的小工具。
 
 # Prerequisite
-* [MinGW](https://sourceforge.net/projects/mingw-w64/files/mingw-w64/)，我用的是**MinGW-W64 GCC-7.3.0**，用新版的MinGW可能编译会有问题。
+* [MinGW](https://sourceforge.net/projects/mingw-w64/files/mingw-w64/)，我用的是**MinGW-W64 GCC-8.1.0**。
 * 编译wxWidgets的静态库：进入wxWidgets解压目录中`build\msw`目录，执行`mingw32-make -f makefile.gcc SHARED=0 UNICODE=1 BUILD=release`，加`-j`可以利用多核编译，如`-j4`用4个核
 
 # 编译
