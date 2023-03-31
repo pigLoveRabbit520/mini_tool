@@ -30,6 +30,7 @@ ToolFrame::ToolFrame(const wxString& title)
 
 void ToolFrame::OnBtnClick(wxCommandEvent & WXUNUSED(event))
 {
+    this->txtInfo->Clear();
     MainBoard* mainBoard = new MainBoard();
     auto res = mainBoard->GetInfo();
     if (res < 0)
@@ -38,9 +39,11 @@ void ToolFrame::OnBtnClick(wxCommandEvent & WXUNUSED(event))
         delete mainBoard;
         return;
     }
-    auto info = wxString::Format(wxT("主板制造商：%s\r\n主板型号：%s") , 
+    auto info = wxString::Format(wxT("主板制造商: %s\r\n主板型号: %s\r\nCPU厂商: %s\r\nCPU名称: %s") , 
         mainBoard->BaseBoardManufacturer, 
-        mainBoard->BaseBoardProduct
+        mainBoard->BaseBoardProduct,
+        mainBoard->CPUManufacturer,
+        mainBoard->CPUName
     );
     this->txtInfo->AppendText(info);
 

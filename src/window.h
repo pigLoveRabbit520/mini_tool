@@ -3,7 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/textctrl.h>
-#include "mainboard.h"
+#include "hardware.h"
 
 class ToolFrame : public wxFrame
 {
